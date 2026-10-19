@@ -1,96 +1,97 @@
 import React from 'react';
-import { Compass, Layers, SunMedium, Hammer } from 'lucide-react';
+import { Compass, Layers, SunMedium, Hammer, CheckCircle2 } from 'lucide-react';
 
 export const DesignApproach: React.FC = () => {
-  const pillars = [
+  const steps = [
     {
-      step: '01',
+      number: '01',
       icon: Compass,
-      title: 'Planning & Spatial Flow',
-      subtitle: 'Sightlines, circulation, and micro-climates',
-      desc: 'We never plan furniture against static walls without studying natural transit paths. Every room layout is engineered with breathing room, intuitive furniture groupings, and uncompromised focal sightlines.',
-      details: ['Sun azimuth & natural light orientation mapping', 'Acoustic zoning between social & private quarters', 'Human-scale ergonomics for seating & dining']
+      title: 'Consultation & Spatial Planning',
+      subtitle: 'Sightlines, circulation, and lifestyle discovery',
+      desc: 'We analyze natural transit paths, sun azimuth, and household rituals before allocating furnishings. Every room is engineered with intuitive circulation and breathing room.',
+      deliverables: ['Daylight orientation & solar study', 'Acoustic zoning between public & quiet wings', 'Ergonomic scale furniture layouts']
     },
     {
-      step: '02',
+      number: '02',
       icon: Layers,
-      title: 'Honest Tactile Materials',
-      subtitle: 'Living stones, hardwoods, and organic weaves',
-      desc: 'Synthetic finishes fatigue the senses. We specify Roman Navona travertine, unsealed white and smoked oak, French flax linen, and aged patinated brass that grow richer through human touch.',
-      details: ['100% natural FSC-certified sustainably harvested timber', 'Low-VOC mineral lime washes and breathable plasters', 'Hand-knitted pure wool and jute textile layers']
+      title: '3D Design & Material Curation',
+      subtitle: 'Living stones, noble hardwoods & tactile weaves',
+      desc: 'Synthetic finishes fatigue the senses. We specify Roman Navona travertine, unsealed white and smoked French oak, pure flax linen, and aged patinated brass.',
+      deliverables: ['Photorealistic 3D spatial elevations', 'Physical sample box delivered to your address', 'Sub-millimeter joinery blueprints']
     },
     {
-      step: '03',
+      number: '03',
       icon: SunMedium,
-      title: 'Architectural Lighting',
-      subtitle: 'Circadian rhythm & shadow composition',
-      desc: 'Lighting is not an afterthought of fixtures on a ceiling—it is how form reveals itself. We layer daylight harvesting with discreet 2400K–2700K warm washes, low-glare architectural spots, and sculptural art luminaires.',
-      details: ['Three distinct scene states: Dawn, Entertaining, and Nocturne', 'Deep-recessed micro spots that eliminate glare', 'Concealed warm perimeter cove washes']
+      title: 'Architectural Lighting & MEP',
+      subtitle: 'Circadian lighting & shadow composition',
+      desc: 'Lighting is how form reveals itself. We layer daylight harvesting with discreet warm washes (2400K–2700K), low-glare micro spots, and sculptural art luminaires.',
+      deliverables: ['Three scene states: Dawn, Entertaining, Nocturne', 'Deep-recessed micro spots that eliminate glare', 'Concealed warm cove & reveal washes']
     },
     {
-      step: '04',
+      number: '04',
       icon: Hammer,
-      title: 'Artisanal Execution',
-      subtitle: 'Millimeter joinery & generational craftsmanship',
-      desc: 'Flawless design requires master hands. Our dedicated European cabinetmakers, stonemasons, and metal artisans craft every bespoke element with sub-millimeter tolerances and hidden joinery.',
-      details: ['Concealed flush-to-wall pocket millwork', 'Hand-turned fluting and bookmatched stone slabs', 'Turnkey site supervision by senior project architects']
+      title: 'Turnkey Execution & Handover',
+      subtitle: 'Master cabinetmakers & white-glove site delivery',
+      desc: 'Our dedicated European cabinetmakers, stonemasons, and MEP leads oversee site progress with bi-weekly photographic dispatches, delivering turnkey perfection.',
+      deliverables: ['Turnkey on-site project architect supervision', 'Bookmatched stone & millimeter flush millwork', 'White-glove styling & deep handover walk-through']
     }
   ];
 
   return (
-    <section id="process" className="bg-[#171B18] text-[#F5F4EE] py-24 md:py-36 px-6 md:px-12 lg:px-16 border-t border-[#222722]">
+    <section id="process" className="bg-[#171B18] text-[#F5F4EE] py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-8 lg:px-12 border-t border-[#222722]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="max-w-3xl mb-16">
-          <span className="text-xs font-semibold text-[#9DB79A] uppercase tracking-[0.2em] block mb-2 font-body">
-            OUR DESIGN PROCESS &middot; 4-STAGE METHODOLOGY
-          </span>
+        <div className="max-w-3xl mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-4 font-heading">
             Our Design Process
           </h2>
-          <p className="text-[#B7B9AF] text-sm md:text-base leading-relaxed font-body">
-            How an empty shell or historic residence transforms into an enduring spatial sanctuary through rigorous planning, authentic materials, and turnkey artisanal craftsmanship.
+          <p className="text-[#B7B9AF] text-sm sm:text-base leading-relaxed font-body">
+            How an empty shell or historic residence transforms into an enduring spatial sanctuary through four disciplined, transparent phases.
           </p>
         </div>
 
-        {/* 4 Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {pillars.map((pillar) => {
-            const Icon = pillar.icon;
+        {/* 4-Step Grid with Standardized Equal-Height Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          {steps.map((step) => {
+            const Icon = step.icon;
             return (
               <div
-                key={pillar.step}
-                className="p-8 sm:p-10 rounded-3xl bg-[#222722] border border-white/5 hover:border-[#9DB79A]/30 transition-all duration-300 flex flex-col justify-between group shadow-xl"
+                key={step.number}
+                className="p-6 sm:p-7 rounded-3xl bg-[#222722] hover:bg-[#282f28] border border-white/10 hover:border-[#9DB79A]/40 transition-all duration-300 flex flex-col justify-between group shadow-xl"
               >
                 <div>
+                  {/* Top Bar with Number and Icon */}
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-3xl font-bold font-mono text-[#9DB79A]">
-                      {pillar.step}
+                    <span className="text-2xl font-bold font-mono text-[#9DB79A]">
+                      {step.number}
                     </span>
-                    <div className="w-12 h-12 rounded-2xl bg-[#171B18] border border-white/10 flex items-center justify-center text-[#9DB79A] group-hover:scale-110 transition-transform">
+                    <div className="w-11 h-11 rounded-2xl bg-[#171B18] border border-white/10 flex items-center justify-center text-[#9DB79A] group-hover:scale-110 transition-transform">
                       <Icon className="w-5 h-5" />
                     </div>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-1.5 tracking-tight font-heading">
-                    {pillar.title}
+                  {/* Title & Subtitle */}
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5 tracking-tight font-heading group-hover:text-[#9DB79A] transition-colors">
+                    {step.title}
                   </h3>
-                  <span className="text-xs text-[#9DB79A] font-medium block mb-4 font-body">
-                    {pillar.subtitle}
+                  <span className="text-xs text-[#9DB79A] font-medium block mb-3.5 font-body">
+                    {step.subtitle}
                   </span>
 
-                  <p className="text-xs sm:text-sm text-[#B7B9AF] leading-relaxed mb-6 font-body">
-                    {pillar.desc}
+                  {/* Body */}
+                  <p className="text-xs sm:text-[13px] text-[#B7B9AF] leading-relaxed mb-6 font-body">
+                    {step.desc}
                   </p>
+                </div>
 
-                  <div className="pt-4 border-t border-white/10 space-y-2.5">
-                    {pillar.details.map((detail, idx) => (
-                      <div key={idx} className="flex items-center gap-2.5 text-xs text-[#B7B9AF] font-body">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#9DB79A] shrink-0" />
-                        <span>{detail}</span>
-                      </div>
-                    ))}
-                  </div>
+                {/* Deliverables Checklist */}
+                <div className="pt-4 border-t border-white/10 space-y-2 mt-auto">
+                  {step.deliverables.map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-2 text-xs text-[#B7B9AF] font-body">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#9DB79A] shrink-0 mt-0.5" />
+                      <span className="leading-snug">{item}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             );

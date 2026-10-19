@@ -18,15 +18,13 @@ export const EditorialGallery: React.FC<EditorialGalleryProps> = ({
   const supportingProject2 = projects[2];
 
   return (
-    <section id="projects" className="bg-[#171B18] text-[#F5F4EE] py-24 md:py-36 px-6 md:px-12 lg:px-16 border-t border-[#222722]">
+    <section id="projects" className="bg-[#171B18] text-[#F5F4EE] py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-8 lg:px-12 border-t border-[#222722]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#222722] gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 pb-6 border-b border-[#222722] gap-6">
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#9DB79A] mb-2 font-body">
               <span>SELECTED COMMISSIONS</span>
-              <span>&middot;</span>
-              <span>01 &mdash; 03</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white font-heading">
               Selected Projects
@@ -57,9 +55,9 @@ export const EditorialGallery: React.FC<EditorialGalleryProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-[#171B18]/90 via-[#171B18]/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300" />
 
                 {/* Top overlay tags */}
-                <div className="absolute top-5 left-5 flex items-center gap-2 text-xs font-medium text-white/90 bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10">
+                <div className="absolute top-5 left-5 flex items-center gap-2 text-xs font-medium text-white/90 bg-[#171B18]/75 backdrop-blur-md px-3 py-1 rounded-md border border-white/10 font-body">
                   <span className="text-[#9DB79A] font-semibold">{dominantProject.category} Suite</span>
-                  <span aria-hidden="true">&middot;</span>
+                  <span aria-hidden="true" className="text-white/40">&middot;</span>
                   <span className="font-mono">{dominantProject.year}</span>
                 </div>
 
@@ -109,8 +107,8 @@ export const EditorialGallery: React.FC<EditorialGalleryProps> = ({
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#171B18]/90 via-[#171B18]/20 to-transparent" />
 
-                  <div className="absolute top-4 left-4 text-xs font-medium text-white/90 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
-                    <span className="text-[#9DB79A]">{supportingProject1.category}</span>
+                  <div className="absolute top-4 left-4 text-xs font-medium text-white/90 bg-[#171B18]/75 backdrop-blur-md px-2.5 py-0.5 rounded-md border border-white/10 font-body">
+                    <span className="text-[#9DB79A] font-semibold">{supportingProject1.category}</span>
                   </div>
 
                   <div className="absolute bottom-5 left-5 right-5">
@@ -142,8 +140,8 @@ export const EditorialGallery: React.FC<EditorialGalleryProps> = ({
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#171B18]/90 via-[#171B18]/20 to-transparent" />
 
-                  <div className="absolute top-4 left-4 text-xs font-medium text-white/90 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
-                    <span className="text-[#9DB79A]">{supportingProject2.category}</span>
+                  <div className="absolute top-4 left-4 text-xs font-medium text-white/90 bg-[#171B18]/75 backdrop-blur-md px-2.5 py-0.5 rounded-md border border-white/10 font-body">
+                    <span className="text-[#9DB79A] font-semibold">{supportingProject2.category}</span>
                   </div>
 
                   <div className="absolute bottom-5 left-5 right-5">
@@ -161,10 +159,7 @@ export const EditorialGallery: React.FC<EditorialGalleryProps> = ({
         </div>
 
         {/* Clear link to full portfolio */}
-        <div className="pt-12 mt-12 border-t border-[#222722] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="text-xs text-[#B7B9AF]">
-            Viewing 3 of 14 verified European residential commissions.
-          </span>
+        <div className="pt-12 mt-12 border-t border-[#222722] flex flex-col sm:flex-row items-center justify-end gap-4">
           <button
             onClick={onViewAllProjects}
             className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-white hover:text-[#9DB79A] transition-colors cursor-pointer"

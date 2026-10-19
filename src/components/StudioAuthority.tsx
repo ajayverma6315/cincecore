@@ -36,16 +36,11 @@ export const StudioAuthority: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#171B18] text-[#F5F4EE] py-24 md:py-36 px-6 md:px-12 lg:px-16 border-t border-[#222722]">
+    <section className="bg-[#171B18] text-[#F5F4EE] py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-8 lg:px-12 border-t border-[#222722]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#222722] gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 pb-6 border-b border-[#222722] gap-6">
           <div>
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#9DB79A] mb-2 font-body">
-              <span>CREDIBILITY &amp; PROVENANCE</span>
-              <span>&middot;</span>
-              <span>CLIENT ENDORSEMENTS</span>
-            </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white font-heading">
               Studio Authority &amp; Trust
             </h2>
@@ -56,11 +51,11 @@ export const StudioAuthority: React.FC = () => {
         </div>
 
         {/* 3 Authentic Client Reviews */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16 items-stretch">
           {verifiedReviews.map((item, idx) => (
             <div
               key={idx}
-              className="p-8 rounded-3xl bg-[#222722] border border-white/5 flex flex-col justify-between hover:border-white/15 transition-all"
+              className="p-6 sm:p-8 rounded-3xl bg-[#222722] border border-white/10 flex flex-col justify-between hover:border-[#9DB79A]/40 transition-all shadow-xl h-full"
             >
               <div>
                 <div className="flex items-center gap-1 text-[#9DB79A] mb-6">

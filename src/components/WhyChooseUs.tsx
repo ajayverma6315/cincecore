@@ -16,7 +16,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ onConsultClick }) => {
     <section
       id="why-choose-us"
       aria-label="Why Choose Cinecore Interior Design"
-      className="w-full bg-[#171B18] text-[#F5F4EE] py-20 sm:py-28 md:py-32 px-6 md:px-12 lg:px-16 border-t border-[#222722] relative overflow-hidden"
+      className="w-full bg-[#171B18] text-[#F5F4EE] py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-8 lg:px-12 border-t border-[#222722] relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -141,7 +141,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ onConsultClick }) => {
                 <button
                   type="button"
                   onClick={onConsultClick}
-                  className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#9DB79A] text-[#171B18] hover:bg-[#8ca889] transition-colors font-bold text-xs sm:text-sm shadow-xl cursor-pointer font-heading"
+                  className="inline-flex items-center gap-2.5 min-h-[44px] px-7 py-3.5 rounded-full bg-[#9DB79A] text-[#171B18] hover:bg-[#8ca889] transition-all font-bold text-xs sm:text-sm tracking-wide shadow-xl cursor-pointer font-heading"
                 >
                   <span>Book Architectural Consultation</span>
                   <ArrowRight className="w-4 h-4" />
@@ -164,6 +164,9 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ onConsultClick }) => {
                   loading="lazy"
                   decoding="async"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3.5">
+                  <span className="text-[11px] font-mono text-[#E5A93C] font-semibold">Modular Culinary Suites</span>
+                </div>
               </div>
 
               {/* Tile 2: Walk-in Dressing Wardrobe & Closet */}
@@ -176,6 +179,9 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ onConsultClick }) => {
                   loading="lazy"
                   decoding="async"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3.5">
+                  <span className="text-[11px] font-mono text-[#E5A93C] font-semibold">Bespoke Walk-in Dressing</span>
+                </div>
               </div>
 
               {/* Tile 3: Living Room / Media Wall with TV and Cove Lighting */}
@@ -188,6 +194,9 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ onConsultClick }) => {
                   loading="lazy"
                   decoding="async"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3.5">
+                  <span className="text-[11px] font-mono text-[#E5A93C] font-semibold">Acoustic Media Architecture</span>
+                </div>
               </div>
 
               {/* Tile 4: Architectural Joinery & Storage Units */}
@@ -200,6 +209,9 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ onConsultClick }) => {
                   loading="lazy"
                   decoding="async"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3.5">
+                  <span className="text-[11px] font-mono text-[#E5A93C] font-semibold">Millimeter European Joinery</span>
+                </div>
               </div>
 
             </div>

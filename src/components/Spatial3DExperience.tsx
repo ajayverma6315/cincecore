@@ -130,16 +130,14 @@ export const Spatial3DExperience: React.FC = () => {
     <section 
       id="spatial-study"
       aria-label="Spatial Depth and Proportions Interactive Study"
-      className="w-full bg-[#FFFFFF] text-[#222722] py-20 sm:py-28 md:py-32 px-6 md:px-12 lg:px-16 border-t border-[#E5E5E0] overflow-hidden"
+      className="w-full bg-[#F5F4EE] text-[#222722] py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-8 lg:px-12 border-t border-[#E5E2D9] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         {/* Two-column Header Layout */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8 pb-8 border-b border-[#E5E5E0]">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8 pb-8 border-b border-[#E5E2D9]">
           <div className="space-y-3">
             {/* Eyebrows */}
             <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-[#4B5549] font-body">
-              <span>INTERACTIVE SPATIAL STUDY</span>
-              <span className="text-neutral-400">&middot;</span>
               <span>2.5D VOLUMETRIC PROJECTION</span>
             </div>
 
@@ -151,7 +149,7 @@ export const Spatial3DExperience: React.FC = () => {
 
           {/* Supporting Text */}
           <div className="lg:max-w-md">
-            <p className="text-sm sm:text-base text-neutral-600 leading-relaxed font-body">
+            <p className="text-sm sm:text-base text-[#4B5549] leading-relaxed font-body">
               Interact with the volume below to observe architectural sightlines, daylight penetration, and layered French boiserie.
             </p>
           </div>
@@ -164,7 +162,7 @@ export const Spatial3DExperience: React.FC = () => {
             <div 
               role="group" 
               aria-label="Lighting presets" 
-              className="inline-flex items-center gap-1 p-1 bg-[#F5F4EE] rounded-full border border-[#E5E5E0] shadow-xs"
+              className="inline-flex items-center gap-1 p-1 bg-[#EBE9DF] rounded-full border border-[#DCD9CE] shadow-xs"
             >
               {(['dawn', 'afternoon', 'nocturne'] as const).map((key) => {
                 const isSelected = activeLighting === key;
@@ -192,7 +190,7 @@ export const Spatial3DExperience: React.FC = () => {
             <div 
               role="group" 
               aria-label="Display modes" 
-              className="inline-flex items-center gap-1 p-1 bg-[#F5F4EE] rounded-full border border-[#E5E5E0] shadow-xs"
+              className="inline-flex items-center gap-1 p-1 bg-[#EBE9DF] rounded-full border border-[#DCD9CE] shadow-xs"
             >
               <button
                 type="button"
@@ -200,11 +198,11 @@ export const Spatial3DExperience: React.FC = () => {
                 className={`inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-medium font-body transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 ${
                   activeMode === 'all'
                     ? 'bg-[#171B18] text-[#F5F4EE] shadow-md font-semibold'
-                    : 'text-neutral-600 hover:text-neutral-900'
+                    : 'text-[#4B5549] hover:text-[#171B18]'
                 }`}
                 aria-pressed={activeMode === 'all'}
               >
-                <Layers className={`w-3.5 h-3.5 ${activeMode === 'all' ? 'text-[#9DB79A]' : 'text-neutral-500'}`} />
+                <Layers className={`w-3.5 h-3.5 ${activeMode === 'all' ? 'text-[#9DB79A]' : 'text-[#4B5549]'}`} />
                 <span>All Layers</span>
               </button>
 
@@ -214,11 +212,11 @@ export const Spatial3DExperience: React.FC = () => {
                 className={`inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-medium font-body transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 ${
                   activeMode === 'grid'
                     ? 'bg-[#171B18] text-[#F5F4EE] shadow-md font-semibold'
-                    : 'text-neutral-600 hover:text-neutral-900'
+                    : 'text-[#4B5549] hover:text-[#171B18]'
                 }`}
                 aria-pressed={activeMode === 'grid'}
               >
-                <Grid3X3 className={`w-3.5 h-3.5 ${activeMode === 'grid' ? 'text-[#9DB79A]' : 'text-neutral-500'}`} />
+                <Grid3X3 className={`w-3.5 h-3.5 ${activeMode === 'grid' ? 'text-[#9DB79A]' : 'text-[#4B5549]'}`} />
                 <span>Volumetric Grid</span>
               </button>
 
@@ -228,11 +226,11 @@ export const Spatial3DExperience: React.FC = () => {
                 className={`inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-medium font-body transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 ${
                   activeMode === 'materials'
                     ? 'bg-[#171B18] text-[#F5F4EE] shadow-md font-semibold'
-                    : 'text-neutral-600 hover:text-neutral-900'
+                    : 'text-[#4B5549] hover:text-[#171B18]'
                 }`}
                 aria-pressed={activeMode === 'materials'}
               >
-                <Sparkles className={`w-3.5 h-3.5 ${activeMode === 'materials' ? 'text-[#9DB79A]' : 'text-neutral-500'}`} />
+                <Sparkles className={`w-3.5 h-3.5 ${activeMode === 'materials' ? 'text-[#9DB79A]' : 'text-[#4B5549]'}`} />
                 <span>Material Skin</span>
               </button>
             </div>
@@ -242,7 +240,7 @@ export const Spatial3DExperience: React.FC = () => {
           <button
             type="button"
             onClick={handleReset}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium font-body bg-[#F5F4EE] border border-[#E5E5E0] text-neutral-700 hover:text-neutral-900 hover:border-neutral-400 transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 shadow-xs"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium font-body bg-[#EBE9DF] border border-[#DCD9CE] text-[#222722] hover:text-black hover:border-[#B7B9AF] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 shadow-xs"
           >
             <RotateCcw className="w-3.5 h-3.5 text-[#4B5549]" />
             <span>Reset View</span>
@@ -392,15 +390,15 @@ export const Spatial3DExperience: React.FC = () => {
         </div>
 
         {/* Mobile-Only Instruction Card: Rendered outside viewport so background room is 100% visible on mobile */}
-        <div className="sm:hidden mt-3 p-3.5 rounded-xl bg-[#F5F4EE] border border-[#E5E5E0] text-xs text-[#222722] flex items-center gap-3 shadow-xs">
-          <div className="p-1.5 rounded-lg bg-white border border-neutral-200 text-neutral-900 shrink-0 shadow-xs">
-            <Compass className="w-4 h-4" />
+        <div className="sm:hidden mt-3 p-3.5 rounded-xl bg-[#EBE9DF] border border-[#DCD9CE] text-xs text-[#222722] flex items-center gap-3 shadow-xs">
+          <div className="p-1.5 rounded-lg bg-[#F5F4EE] border border-[#DCD9CE] text-[#171B18] shrink-0 shadow-xs">
+            <Compass className="w-4 h-4 text-[#9DB79A]" />
           </div>
           <div className="min-w-0">
             <span className="text-[10px] uppercase font-mono tracking-wider text-[#4B5549] font-semibold block mb-0.5">
               Interactive 2.5D Viewport
             </span>
-            <p className="text-xs text-neutral-600 leading-relaxed font-body">
+            <p className="text-xs text-[#4B5549] leading-relaxed font-body">
               Drag across the frame to inspect architectural sightlines between the window casement and conversational seating core.
             </p>
           </div>

@@ -4,10 +4,10 @@ export const EditorialQuotation: React.FC = () => {
   return (
     <section 
       aria-label="Editorial Design Philosophy"
-      className="relative w-full bg-[#171B18] text-[#F5F4EE] py-28 sm:py-36 md:py-44 px-6 md:px-12 lg:px-16 overflow-hidden"
+      className="relative w-full bg-[#171B18] text-[#F5F4EE] py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-8 lg:px-12 overflow-hidden border-t border-[#222722]"
     >
-      {/* Subtle top divider line derived from #4B5549 */}
-      <div className="max-w-4xl mx-auto mb-16 sm:mb-20">
+      {/* Subtle top divider line */}
+      <div className="max-w-4xl mx-auto mb-12 sm:mb-16">
         <div className="w-full h-px bg-gradient-to-r from-transparent via-[#4B5549]/50 to-transparent" />
       </div>
 

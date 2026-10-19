@@ -44,7 +44,7 @@ export const ConsultationCTA: React.FC = () => {
     <section 
       id="contact" 
       aria-label="Contact our team"
-      className="w-full bg-[#F5F4EE] text-[#222722] py-24 sm:py-32 md:py-36 px-6 md:px-12 lg:px-16 border-t border-[#E5E2D9] relative overflow-hidden"
+      className="w-full bg-[#F5F4EE] text-[#222722] py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-8 lg:px-12 border-t border-[#E5E2D9] relative overflow-hidden"
     >
       <div className="max-w-4xl mx-auto">
         
@@ -90,12 +90,12 @@ export const ConsultationCTA: React.FC = () => {
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-7">
+            <form onSubmit={handleSubmit} className="space-y-6">
               {/* Field 1: NAME */}
               <div>
                 <label 
                   htmlFor="contact-name"
-                  className="block text-xs font-mono uppercase tracking-[0.2em] text-[#4B5549] font-medium mb-2.5"
+                  className="block text-xs font-mono uppercase tracking-[0.2em] text-[#4B5549] font-semibold mb-2"
                 >
                   NAME
                 </label>
@@ -106,7 +106,7 @@ export const ConsultationCTA: React.FC = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Your full name"
-                  className={`w-full px-4 py-3.5 rounded-lg bg-[#EAE8E1]/85 border text-[#222722] text-sm font-body placeholder:text-neutral-400 focus:outline-none focus:bg-white focus:border-[#222722] transition-all ${
+                  className={`w-full h-12 px-4 rounded-xl bg-[#EAE8E1]/85 border text-[#222722] text-sm font-body placeholder:text-neutral-400 focus:outline-none focus:bg-white focus:border-[#222722] transition-all ${
                     errors.name ? 'border-red-500 bg-red-50/50' : 'border-[#D5D2C7]'
                   }`}
                 />
@@ -119,7 +119,7 @@ export const ConsultationCTA: React.FC = () => {
               <div>
                 <label 
                   htmlFor="contact-email"
-                  className="block text-xs font-mono uppercase tracking-[0.2em] text-[#4B5549] font-medium mb-2.5"
+                  className="block text-xs font-mono uppercase tracking-[0.2em] text-[#4B5549] font-semibold mb-2"
                 >
                   EMAIL ADDRESS
                 </label>
@@ -130,7 +130,7 @@ export const ConsultationCTA: React.FC = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="name@example.com"
-                  className={`w-full px-4 py-3.5 rounded-lg bg-[#EAE8E1]/85 border text-[#222722] text-sm font-body placeholder:text-neutral-400 focus:outline-none focus:bg-white focus:border-[#222722] transition-all ${
+                  className={`w-full h-12 px-4 rounded-xl bg-[#EAE8E1]/85 border text-[#222722] text-sm font-body placeholder:text-neutral-400 focus:outline-none focus:bg-white focus:border-[#222722] transition-all ${
                     errors.email ? 'border-red-500 bg-red-50/50' : 'border-[#D5D2C7]'
                   }`}
                 />

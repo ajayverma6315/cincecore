@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Check, MapPin, Mail, Phone } from 'lucide-react';
-import { RESIDENTIAL_SERVICES, ResidentialService } from '../data/servicesData';
+import { Check, MapPin, Mail, ArrowUpRight } from 'lucide-react';
+import { navigateTo } from '../utils/navigation';
 
 interface EditorialFooterProps {
   onNavClick: (id: string) => void;
-  onSelectService: (service: ResidentialService) => void;
+  onSelectService?: (service: any) => void;
   onOpenConsultation: () => void;
 }
 
 export const EditorialFooter: React.FC<EditorialFooterProps> = ({
   onNavClick,
-  onSelectService,
   onOpenConsultation,
 }) => {
   const [email, setEmail] = useState('');
@@ -25,27 +24,8 @@ export const EditorialFooter: React.FC<EditorialFooterProps> = ({
   };
 
   return (
-    <footer className="bg-[#171B18] text-[#F5F4EE] border-t border-[#222722] py-20 px-6 md:px-12 lg:px-16">
-      <div className="max-w-7xl mx-auto space-y-16">
-        {/* Top Banner Callout */}
-        <div className="p-8 md:p-12 rounded-3xl bg-[#222722] border border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-8">
-          <div className="max-w-xl">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#9DB79A] font-semibold block mb-2">
-              COMMISSIONS CALENDAR &middot; 2026/2027
-            </span>
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white font-heading">
-              Ready to transform your residence with architectural calm?
-            </h3>
-          </div>
-          <button
-            onClick={onOpenConsultation}
-            className="self-start md:self-center inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#9DB79A] hover:bg-[#8ca889] text-[#171B18] font-bold text-sm transition-all shadow-xl cursor-pointer font-heading"
-          >
-            <span>Begin Commission Dialogue</span>
-            <ArrowUpRight className="w-4 h-4" />
-          </button>
-        </div>
-
+    <footer className="bg-[#171B18] text-[#F5F4EE] border-t border-[#222722] py-14 md:py-16 px-6 md:px-12 lg:px-16">
+      <div className="max-w-7xl mx-auto space-y-12 md:space-y-14">
         {/* Multi-Column Sitemap Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
           {/* Brand & Studio Ethos (4 cols) */}
@@ -56,7 +36,7 @@ export const EditorialFooter: React.FC<EditorialFooterProps> = ({
             <p className="text-xs sm:text-sm text-[#B7B9AF] leading-relaxed max-w-sm font-body">
               Parisian-inspired contemporary European interior architecture and bespoke residential design. Sculpting light, proportion, and noble materials for quiet everyday living.
             </p>
-            <div className="pt-2 text-xs text-[#B7B9AF] space-y-1 font-mono">
+            <div className="pt-2 text-xs text-[#B7B9AF] space-y-1.5 font-mono">
               <div className="flex items-center gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#9DB79A]" />
                 <span>London &middot; Paris &middot; New York</span>
@@ -68,99 +48,134 @@ export const EditorialFooter: React.FC<EditorialFooterProps> = ({
             </div>
           </div>
 
-          {/* Navigation Links (2 cols) */}
+          {/* Architecture & Navigation Links (2 cols) */}
           <div className="lg:col-span-2 space-y-3">
             <h5 className="text-xs font-semibold uppercase tracking-wider text-[#9DB79A] font-heading">
-              Architecture
+              Studio &amp; Works
             </h5>
             <ul className="space-y-2 text-xs text-[#B7B9AF] font-body">
               <li>
                 <button
-                  onClick={() => onNavClick('home')}
-                  className="hover:text-white transition-colors cursor-pointer"
+                  onClick={() => {
+                    if (window.location.pathname === '/') {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                      onNavClick('home');
+                    } else {
+                      navigateTo('/');
+                    }
+                  }}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
                 >
                   Home Overview
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onNavClick('projects')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  Selected Projects
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onNavClick('why-choose-us')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  Why Choose Us
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onNavClick('about')}
-                  className="hover:text-white transition-colors cursor-pointer"
+                  onClick={() => navigateTo('/about/')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
                 >
                   About Atelier
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onNavClick('services')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  BHK Typologies
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onNavClick('process')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  Our Design Process
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={onOpenConsultation}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  Private Consultation
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Residential Services (3 cols) */}
-          <div className="lg:col-span-3 space-y-3">
-            <h5 className="text-xs font-semibold uppercase tracking-wider text-[#9DB79A] font-heading">
-              Residential Services
-            </h5>
-            <ul className="space-y-2 text-xs text-[#B7B9AF] font-body">
-              {RESIDENTIAL_SERVICES.slice(0, 5).map((service) => (
-                <li key={service.slug}>
-                  <button
-                    onClick={() => onSelectService(service)}
-                    className="hover:text-white transition-colors cursor-pointer text-left truncate block w-full"
-                  >
-                    {service.name}
-                  </button>
-                </li>
-              ))}
-              <li>
-                <button
-                  onClick={() => onSelectService(RESIDENTIAL_SERVICES[5])}
+                  onClick={() => navigateTo('/projects/')}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  Modular Kitchen Design
+                  Selected Projects
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigateTo('/interior-design-services/')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  Design Services
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigateTo('/interior-design-cost/')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  Cost Feasibility Guide
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigateTo('/contact/')}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  Book Consultation
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Monograph Newsletter (3 cols) */}
+          {/* Residential BHK Typologies (3 cols) */}
+          <div className="lg:col-span-3 space-y-3">
+            <h5 className="text-xs font-semibold uppercase tracking-wider text-[#9DB79A] font-heading">
+              BHK Typologies
+            </h5>
+            <ul className="space-y-2 text-xs text-[#B7B9AF] font-body">
+              <li>
+                <button
+                  onClick={() => navigateTo('/1-bhk-interior-design/')}
+                  className="hover:text-white transition-colors cursor-pointer text-left flex items-center justify-between w-full group"
+                >
+                  <span>1 BHK Interior Design</span>
+                  <ArrowUpRight className="w-3 h-3 text-[#9DB79A] opacity-0 group-hover:opacity-100 transition-opacity" />
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigateTo('/2-bhk-interior-design/')}
+                  className="hover:text-white transition-colors cursor-pointer text-left flex items-center justify-between w-full group"
+                >
+                  <span>2 BHK Interior Design</span>
+                  <ArrowUpRight className="w-3 h-3 text-[#9DB79A] opacity-0 group-hover:opacity-100 transition-opacity" />
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigateTo('/3-bhk-interior-design/')}
+                  className="hover:text-white transition-colors cursor-pointer text-left flex items-center justify-between w-full group"
+                >
+                  <span>3 BHK Interior Design</span>
+                  <ArrowUpRight className="w-3 h-3 text-[#9DB79A] opacity-0 group-hover:opacity-100 transition-opacity" />
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigateTo('/4-bhk-interior-design/')}
+                  className="hover:text-white transition-colors cursor-pointer text-left flex items-center justify-between w-full group"
+                >
+                  <span>4 BHK Interior Design</span>
+                  <ArrowUpRight className="w-3 h-3 text-[#9DB79A] opacity-0 group-hover:opacity-100 transition-opacity" />
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigateTo('/interior-design-services/')}
+                  className="hover:text-white transition-colors cursor-pointer text-left text-neutral-400 group flex items-center justify-between w-full"
+                >
+                  <span>Modular Kitchen &amp; Wardrobes</span>
+                  <ArrowUpRight className="w-3 h-3 text-[#9DB79A] opacity-0 group-hover:opacity-100 transition-opacity" />
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigateTo('/interior-design-services/')}
+                  className="hover:text-white transition-colors cursor-pointer text-left text-neutral-400 group flex items-center justify-between w-full"
+                >
+                  <span>Bespoke Penthouse Architecture</span>
+                  <ArrowUpRight className="w-3 h-3 text-[#9DB79A] opacity-0 group-hover:opacity-100 transition-opacity" />
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Monograph Newsletter & Blog (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
             <h5 className="text-xs font-semibold uppercase tracking-wider text-[#9DB79A] font-heading">
               Cinecore Journal
@@ -192,16 +207,49 @@ export const EditorialFooter: React.FC<EditorialFooterProps> = ({
                 </button>
               </form>
             )}
+            <button
+              onClick={() => navigateTo('/blog/')}
+              className="text-xs text-[#9DB79A] hover:text-white transition-colors cursor-pointer block pt-1 font-mono"
+            >
+              &rarr; View All Journal Articles
+            </button>
           </div>
         </div>
 
         {/* Bottom Bar: Copyright & Legal */}
         <div className="pt-8 border-t border-[#222722] flex flex-col sm:flex-row items-center justify-between text-xs text-[#B7B9AF] gap-4 font-body">
           <p>&copy; {new Date().getFullYear()} Cinecore Interior Design Atelier. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <span className="hover:text-white transition-colors cursor-pointer">Privacy Charter</span>
-            <span className="hover:text-white transition-colors cursor-pointer">Terms of Engagement</span>
-            <span className="hover:text-white transition-colors cursor-pointer">Press Dossier</span>
+          <div className="flex flex-wrap items-center gap-6">
+            <button
+              onClick={() => navigateTo('/about/')}
+              className="hover:text-white transition-colors cursor-pointer text-left"
+            >
+              About Us
+            </button>
+            <button
+              onClick={() => navigateTo('/projects/')}
+              className="hover:text-white transition-colors cursor-pointer text-left"
+            >
+              Projects
+            </button>
+            <button
+              onClick={() => navigateTo('/contact/')}
+              className="hover:text-white transition-colors cursor-pointer text-left"
+            >
+              Contact
+            </button>
+            <button
+              onClick={() => navigateTo('/privacy-policy/')}
+              className="hover:text-white transition-colors cursor-pointer text-left"
+            >
+              Privacy Policy
+            </button>
+            <button
+              onClick={() => navigateTo('/terms-and-conditions/')}
+              className="hover:text-white transition-colors cursor-pointer text-left"
+            >
+              Terms &amp; Conditions
+            </button>
           </div>
         </div>
       </div>

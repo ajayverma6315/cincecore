@@ -3,9 +3,13 @@ import { CheckCircle2, ArrowRight } from 'lucide-react';
 
 interface AboutUsSectionProps {
   onLearnMore?: () => void;
+  learnMoreText?: string;
 }
 
-export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onLearnMore }) => {
+export const AboutUsSection: React.FC<AboutUsSectionProps> = ({
+  onLearnMore,
+  learnMoreText = 'LEARN MORE',
+}) => {
   const checkmarks = [
     'Experienced Team of Architects & Engineers',
     'Timely Delivery',
@@ -17,7 +21,7 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onLearnMore }) =
     <section 
       id="about" 
       aria-label="About Cinecore Interior Design"
-      className="w-full bg-[#F5F4EE] text-[#222722] py-24 sm:py-32 md:py-36 px-6 md:px-12 lg:px-16 overflow-hidden"
+      className="w-full bg-[#F5F4EE] text-[#222722] py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-8 lg:px-12 overflow-hidden border-t border-[#E5E2D9]"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -90,14 +94,14 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onLearnMore }) =
               ))}
             </div>
 
-            {/* Learn More Action Button matching screenshot */}
+            {/* Learn More Action Button matching design system */}
             <div className="pt-4">
               <button
                 type="button"
                 onClick={onLearnMore}
-                className="inline-flex items-center justify-center gap-3 bg-[#4B5549] hover:bg-[#222722] text-[#F5F4EE] font-medium text-xs sm:text-sm uppercase tracking-wider px-8 py-3.5 rounded-lg shadow-md hover:shadow-xl transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-4 focus-visible:ring-[#9DB79A]/40"
+                className="inline-flex items-center justify-center gap-3 min-h-[44px] bg-[#171B18] hover:bg-[#2C322C] text-[#F5F4EE] font-bold text-xs sm:text-sm uppercase tracking-wider px-8 py-3.5 rounded-full shadow-md hover:shadow-xl transition-all duration-200 cursor-pointer font-heading focus:outline-none focus-visible:ring-4 focus-visible:ring-[#9DB79A]/40"
               >
-                <span>LEARN MORE</span>
+                <span>{learnMoreText}</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
             </div>
