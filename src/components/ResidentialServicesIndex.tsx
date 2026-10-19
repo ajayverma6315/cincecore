@@ -20,10 +20,10 @@ export const ResidentialServicesIndex: React.FC<ResidentialServicesIndexProps> =
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#9DB79A] mb-2 font-body">
               <Home className="w-3.5 h-3.5" />
-              <span>RESIDENTIAL PRACTICE INDEX</span>
+              <span>RESIDENTIAL SERVICES &middot; BY BHK SIZE</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white font-heading">
-              Residential Services Index
+              Interior Design by BHK Size
             </h2>
           </div>
           <p className="text-sm text-[#B7B9AF] max-w-md leading-relaxed font-body">

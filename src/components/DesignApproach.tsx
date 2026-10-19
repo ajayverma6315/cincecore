@@ -38,62 +38,64 @@ export const DesignApproach: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/10">
-      {/* Header */}
-      <div className="max-w-3xl mb-16">
-        <span className="text-xs font-semibold text-emerald-400 uppercase tracking-widest block mb-2">
-          The Four Pillars
-        </span>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight mb-4">
-          Our Architectural Design Approach
-        </h2>
-        <p className="text-neutral-300 text-sm md:text-base leading-relaxed">
-          How an empty shell or historic residence transforms into a timeless spatial experience.
-        </p>
-      </div>
+    <section id="process" className="bg-[#171B18] text-[#F5F4EE] py-24 md:py-36 px-6 md:px-12 lg:px-16 border-t border-[#222722]">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="max-w-3xl mb-16">
+          <span className="text-xs font-semibold text-[#9DB79A] uppercase tracking-[0.2em] block mb-2 font-body">
+            OUR DESIGN PROCESS &middot; 4-STAGE METHODOLOGY
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-4 font-heading">
+            Our Design Process
+          </h2>
+          <p className="text-[#B7B9AF] text-sm md:text-base leading-relaxed font-body">
+            How an empty shell or historic residence transforms into an enduring spatial sanctuary through rigorous planning, authentic materials, and turnkey artisanal craftsmanship.
+          </p>
+        </div>
 
-      {/* 4 Pillars Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {pillars.map((pillar) => {
-          const Icon = pillar.icon;
-          return (
-            <div
-              key={pillar.step}
-              className="p-8 rounded-3xl bg-neutral-900/40 border border-white/10 hover:border-white/20 transition-all flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-3xl font-bold font-mono text-emerald-400/80">
-                    {pillar.step}
+        {/* 4 Pillars Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {pillars.map((pillar) => {
+            const Icon = pillar.icon;
+            return (
+              <div
+                key={pillar.step}
+                className="p-8 sm:p-10 rounded-3xl bg-[#222722] border border-white/5 hover:border-[#9DB79A]/30 transition-all duration-300 flex flex-col justify-between group shadow-xl"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-3xl font-bold font-mono text-[#9DB79A]">
+                      {pillar.step}
+                    </span>
+                    <div className="w-12 h-12 rounded-2xl bg-[#171B18] border border-white/10 flex items-center justify-center text-[#9DB79A] group-hover:scale-110 transition-transform">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                  </div>
+
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-1.5 tracking-tight font-heading">
+                    {pillar.title}
+                  </h3>
+                  <span className="text-xs text-[#9DB79A] font-medium block mb-4 font-body">
+                    {pillar.subtitle}
                   </span>
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white">
-                    <Icon className="w-5 h-5" />
+
+                  <p className="text-xs sm:text-sm text-[#B7B9AF] leading-relaxed mb-6 font-body">
+                    {pillar.desc}
+                  </p>
+
+                  <div className="pt-4 border-t border-white/10 space-y-2.5">
+                    {pillar.details.map((detail, idx) => (
+                      <div key={idx} className="flex items-center gap-2.5 text-xs text-[#B7B9AF] font-body">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#9DB79A] shrink-0" />
+                        <span>{detail}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-
-                <h3 className="text-xl font-bold text-white mb-1 tracking-tight">
-                  {pillar.title}
-                </h3>
-                <span className="text-xs text-emerald-400 font-medium block mb-3">
-                  {pillar.subtitle}
-                </span>
-
-                <p className="text-xs md:text-sm text-neutral-300 leading-relaxed mb-6">
-                  {pillar.desc}
-                </p>
-
-                <div className="pt-4 border-t border-white/5 space-y-2">
-                  {pillar.details.map((detail, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs text-neutral-400">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
-                      <span>{detail}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );

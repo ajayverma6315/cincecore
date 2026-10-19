@@ -29,7 +29,7 @@ export const EditorialGallery: React.FC<EditorialGalleryProps> = ({
               <span>01 &mdash; 03</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white font-heading">
-              Architectural Works
+              Selected Projects
             </h2>
           </div>
           <p className="text-sm text-[#B7B9AF] max-w-md leading-relaxed font-body">

@@ -92,18 +92,34 @@ export const EditorialFooter: React.FC<EditorialFooterProps> = ({
               </li>
               <li>
                 <button
-                  onClick={() => onNavClick('studio')}
+                  onClick={() => onNavClick('why-choose-us')}
                   className="hover:text-white transition-colors cursor-pointer"
                 >
-                  Design Philosophy
+                  Why Choose Us
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onNavClick('signature-story')}
+                  onClick={() => onNavClick('about')}
                   className="hover:text-white transition-colors cursor-pointer"
                 >
-                  Signature Case Study
+                  About Atelier
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavClick('services')}
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
+                  BHK Typologies
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavClick('process')}
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
+                  Our Design Process
                 </button>
               </li>
               <li>

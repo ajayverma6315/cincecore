@@ -130,28 +130,28 @@ export const Spatial3DExperience: React.FC = () => {
     <section 
       id="spatial-study"
       aria-label="Spatial Depth and Proportions Interactive Study"
-      className="w-full bg-[#171B18] text-[#F5F4EE] py-24 sm:py-32 md:py-36 px-6 md:px-12 lg:px-16 overflow-hidden"
+      className="w-full bg-[#FFFFFF] text-[#222722] py-20 sm:py-28 md:py-32 px-6 md:px-12 lg:px-16 border-t border-[#E5E5E0] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         {/* Two-column Header Layout */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8 pb-8 border-b border-[#4B5549]/30">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8 pb-8 border-b border-[#E5E5E0]">
           <div className="space-y-3">
             {/* Eyebrows */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-[#9DB79A] font-body">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-[#4B5549] font-body">
               <span>INTERACTIVE SPATIAL STUDY</span>
-              <span className="text-[#4B5549]">&middot;</span>
+              <span className="text-neutral-400">&middot;</span>
               <span>2.5D VOLUMETRIC PROJECTION</span>
             </div>
 
             {/* Section Heading */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#F5F4EE] font-heading uppercase">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#222722] font-heading uppercase">
               Spatial Depth &amp; Proportions
             </h2>
           </div>
 
           {/* Supporting Text */}
           <div className="lg:max-w-md">
-            <p className="text-sm sm:text-base text-[#B7B9AF] leading-relaxed font-body">
+            <p className="text-sm sm:text-base text-neutral-600 leading-relaxed font-body">
               Interact with the volume below to observe architectural sightlines, daylight penetration, and layered French boiserie.
             </p>
           </div>
@@ -164,7 +164,7 @@ export const Spatial3DExperience: React.FC = () => {
             <div 
               role="group" 
               aria-label="Lighting presets" 
-              className="inline-flex items-center gap-1 p-1 bg-[#222722] rounded-full border border-[#4B5549]/40"
+              className="inline-flex items-center gap-1 p-1 bg-[#F5F4EE] rounded-full border border-[#E5E5E0] shadow-xs"
             >
               {(['dawn', 'afternoon', 'nocturne'] as const).map((key) => {
                 const isSelected = activeLighting === key;
@@ -174,14 +174,14 @@ export const Spatial3DExperience: React.FC = () => {
                     key={key}
                     type="button"
                     onClick={() => setActiveLighting(key)}
-                    className={`inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-medium font-body transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9DB79A] ${
+                    className={`inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-medium font-body transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 ${
                       isSelected
-                        ? 'bg-[#F5F4EE] text-[#171B18] shadow-md font-semibold'
-                        : 'text-[#B7B9AF] hover:text-[#F5F4EE]'
+                        ? 'bg-[#171B18] text-[#F5F4EE] shadow-md font-semibold'
+                        : 'text-neutral-600 hover:text-neutral-900'
                     }`}
                     aria-pressed={isSelected}
                   >
-                    <Icon className={`w-3.5 h-3.5 ${isSelected ? 'text-[#171B18]' : 'text-[#9DB79A]'}`} />
+                    <Icon className={`w-3.5 h-3.5 ${isSelected ? 'text-[#9DB79A]' : 'text-neutral-500'}`} />
                     <span>{lightingData[key].label}</span>
                   </button>
                 );
@@ -192,47 +192,47 @@ export const Spatial3DExperience: React.FC = () => {
             <div 
               role="group" 
               aria-label="Display modes" 
-              className="inline-flex items-center gap-1 p-1 bg-[#222722] rounded-full border border-[#4B5549]/40"
+              className="inline-flex items-center gap-1 p-1 bg-[#F5F4EE] rounded-full border border-[#E5E5E0] shadow-xs"
             >
               <button
                 type="button"
                 onClick={() => setActiveMode('all')}
-                className={`inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-medium font-body transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9DB79A] ${
+                className={`inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-medium font-body transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 ${
                   activeMode === 'all'
-                    ? 'bg-[#F5F4EE] text-[#171B18] shadow-md font-semibold'
-                    : 'text-[#B7B9AF] hover:text-[#F5F4EE]'
+                    ? 'bg-[#171B18] text-[#F5F4EE] shadow-md font-semibold'
+                    : 'text-neutral-600 hover:text-neutral-900'
                 }`}
                 aria-pressed={activeMode === 'all'}
               >
-                <Layers className={`w-3.5 h-3.5 ${activeMode === 'all' ? 'text-[#171B18]' : 'text-[#9DB79A]'}`} />
+                <Layers className={`w-3.5 h-3.5 ${activeMode === 'all' ? 'text-[#9DB79A]' : 'text-neutral-500'}`} />
                 <span>All Layers</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => setActiveMode('grid')}
-                className={`inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-medium font-body transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9DB79A] ${
+                className={`inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-medium font-body transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 ${
                   activeMode === 'grid'
-                    ? 'bg-[#F5F4EE] text-[#171B18] shadow-md font-semibold'
-                    : 'text-[#B7B9AF] hover:text-[#F5F4EE]'
+                    ? 'bg-[#171B18] text-[#F5F4EE] shadow-md font-semibold'
+                    : 'text-neutral-600 hover:text-neutral-900'
                 }`}
                 aria-pressed={activeMode === 'grid'}
               >
-                <Grid3X3 className={`w-3.5 h-3.5 ${activeMode === 'grid' ? 'text-[#171B18]' : 'text-[#9DB79A]'}`} />
+                <Grid3X3 className={`w-3.5 h-3.5 ${activeMode === 'grid' ? 'text-[#9DB79A]' : 'text-neutral-500'}`} />
                 <span>Volumetric Grid</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => setActiveMode('materials')}
-                className={`inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-medium font-body transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9DB79A] ${
+                className={`inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-medium font-body transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 ${
                   activeMode === 'materials'
-                    ? 'bg-[#F5F4EE] text-[#171B18] shadow-md font-semibold'
-                    : 'text-[#B7B9AF] hover:text-[#F5F4EE]'
+                    ? 'bg-[#171B18] text-[#F5F4EE] shadow-md font-semibold'
+                    : 'text-neutral-600 hover:text-neutral-900'
                 }`}
                 aria-pressed={activeMode === 'materials'}
               >
-                <Sparkles className={`w-3.5 h-3.5 ${activeMode === 'materials' ? 'text-[#171B18]' : 'text-[#9DB79A]'}`} />
+                <Sparkles className={`w-3.5 h-3.5 ${activeMode === 'materials' ? 'text-[#9DB79A]' : 'text-neutral-500'}`} />
                 <span>Material Skin</span>
               </button>
             </div>
@@ -242,9 +242,9 @@ export const Spatial3DExperience: React.FC = () => {
           <button
             type="button"
             onClick={handleReset}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium font-body bg-[#222722] border border-[#4B5549]/40 text-[#B7B9AF] hover:text-[#F5F4EE] hover:border-[#9DB79A]/40 transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9DB79A]"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium font-body bg-[#F5F4EE] border border-[#E5E5E0] text-neutral-700 hover:text-neutral-900 hover:border-neutral-400 transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 shadow-xs"
           >
-            <RotateCcw className="w-3.5 h-3.5 text-[#9DB79A]" />
+            <RotateCcw className="w-3.5 h-3.5 text-[#4B5549]" />
             <span>Reset View</span>
           </button>
         </div>
@@ -262,7 +262,7 @@ export const Spatial3DExperience: React.FC = () => {
           onTouchEnd={handleTouchEnd}
           onKeyDown={handleKeyDown}
           style={{ perspective: prefersReducedMotion ? 'none' : '1200px' }}
-          className="relative w-full min-h-[380px] sm:min-h-[460px] md:min-h-[520px] aspect-[4/3] sm:aspect-[16/10] lg:aspect-[16/9] max-h-[640px] rounded-2xl sm:rounded-3xl overflow-hidden bg-[#1A1F1B] border border-[#4B5549]/40 shadow-2xl cursor-crosshair select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9DB79A]"
+          className="relative w-full min-h-[380px] sm:min-h-[460px] md:min-h-[520px] aspect-[4/3] sm:aspect-[16/10] lg:aspect-[16/9] max-h-[640px] rounded-2xl sm:rounded-3xl overflow-hidden bg-neutral-900 border border-neutral-300 shadow-2xl cursor-crosshair select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900"
         >
           {/* Main Visual Asset: Layered 2.5D Interior Photograph */}
           <div
@@ -320,19 +320,19 @@ export const Spatial3DExperience: React.FC = () => {
                   className="absolute -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
                 >
                   <div className="group relative">
-                    <div className="w-6 h-6 rounded-full bg-[#171B18]/80 border border-[#9DB79A] flex items-center justify-center cursor-pointer shadow-lg hover:scale-110 transition-transform">
-                      <span className="w-2 h-2 rounded-full bg-[#9DB79A] animate-ping" />
-                      <span className="absolute w-2 h-2 rounded-full bg-[#9DB79A]" />
+                    <div className="w-6 h-6 rounded-full bg-white/90 border border-neutral-800 flex items-center justify-center cursor-pointer shadow-lg hover:scale-110 transition-transform">
+                      <span className="w-2 h-2 rounded-full bg-[#171B18] animate-ping" />
+                      <span className="absolute w-2 h-2 rounded-full bg-[#171B18]" />
                     </div>
                     {/* Tooltip Card */}
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 sm:w-56 p-2.5 rounded-xl bg-[#171B18]/90 backdrop-blur-md border border-[#4B5549]/60 shadow-xl opacity-90 group-hover:opacity-100 transition-opacity">
-                      <span className="text-[9px] uppercase tracking-wider font-semibold text-[#9DB79A] block font-body">
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 sm:w-56 p-2.5 rounded-xl bg-white/95 backdrop-blur-md border border-neutral-200 shadow-xl opacity-90 group-hover:opacity-100 transition-opacity">
+                      <span className="text-[9px] uppercase tracking-wider font-semibold text-[#4B5549] block font-body">
                         Material Spec 0{i + 1}
                       </span>
-                      <h4 className="text-xs font-bold text-[#F5F4EE] font-heading">
+                      <h4 className="text-xs font-bold text-[#171B18] font-heading">
                         {mat.title}
                       </h4>
-                      <p className="text-[10px] text-[#B7B9AF] font-body mt-0.5">
+                      <p className="text-[10px] text-neutral-600 font-body mt-0.5">
                         {mat.subtitle}
                       </p>
                     </div>
@@ -355,36 +355,36 @@ export const Spatial3DExperience: React.FC = () => {
             {/* Top HUD Data Bar */}
             <div className="flex items-center justify-between gap-2 text-xs font-mono">
               {/* Spatial Model Label */}
-              <div className="bg-[#171B18]/80 backdrop-blur-md px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-white/10 text-white flex items-center gap-1.5 shadow-lg text-[10px] sm:text-xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#9DB79A] animate-pulse" />
+              <div className="bg-white/95 backdrop-blur-md px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-black/10 text-neutral-900 flex items-center gap-1.5 shadow-lg text-[10px] sm:text-xs font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#171B18] animate-pulse" />
                 <span className="tracking-wider">THE OLIVE SALON</span>
               </div>
 
               {/* Pitch / Yaw / Focal Depth */}
-              <div className="flex items-center gap-2 sm:gap-3 bg-[#171B18]/80 backdrop-blur-md px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-white/10 text-[#F5F4EE]/90 shadow-lg text-[10px] sm:text-xs">
+              <div className="flex items-center gap-2 sm:gap-3 bg-white/95 backdrop-blur-md px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-black/10 text-neutral-800 shadow-lg text-[10px] sm:text-xs font-medium">
                 <span className="hidden sm:inline">PITCH: {pitch.toFixed(1)}&deg; / YAW: {yaw.toFixed(1)}&deg; / </span>
-                <span className="text-[#9DB79A]">DEPTH: 3.2m</span>
+                <span className="text-[#4B5549] font-bold">DEPTH: 3.2m</span>
               </div>
             </div>
 
             {/* Bottom Floating Info Area */}
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mt-auto">
               {/* Desktop-Only In-Viewport Instruction Card (preventing mobile room obstruction) */}
-              <div className="hidden sm:block bg-[#171B18]/85 backdrop-blur-md p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-white/10 max-w-md shadow-2xl">
+              <div className="hidden sm:block bg-white/95 backdrop-blur-md p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-black/10 max-w-md shadow-2xl">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-[10px] uppercase tracking-widest font-semibold text-[#9DB79A] font-body">
+                  <span className="text-[10px] uppercase tracking-widest font-semibold text-[#4B5549] font-body">
                     Architectural Coordinate
                   </span>
-                  <span className="text-[9px] font-mono text-[#B7B9AF]">X: 104.2 / Y: 88.0</span>
+                  <span className="text-[9px] font-mono text-neutral-500">X: 104.2 / Y: 88.0</span>
                 </div>
-                <p className="text-xs sm:text-[13px] text-[#F5F4EE] leading-relaxed font-body">
+                <p className="text-xs sm:text-[13px] text-neutral-800 leading-relaxed font-body">
                   Move the cursor or drag across the frame to inspect the relationship between the window casement and the conversational seating core.
                 </p>
               </div>
 
               {/* Active Scene Indicator (Sleek and compact so room stays visible) */}
-              <div className="self-end sm:self-end bg-[#171B18]/85 backdrop-blur-md px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg sm:rounded-xl border border-white/10 text-[10px] sm:text-xs font-mono text-[#9DB79A] shadow-xl flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#9DB79A]" />
+              <div className="self-end sm:self-end bg-white/95 backdrop-blur-md px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg sm:rounded-xl border border-black/10 text-[10px] sm:text-xs font-mono text-neutral-900 shadow-xl flex items-center gap-1.5 font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#171B18]" />
                 <span>ACTIVE SCENE: {lightingData[activeLighting].activeSceneText}</span>
               </div>
             </div>
@@ -392,15 +392,15 @@ export const Spatial3DExperience: React.FC = () => {
         </div>
 
         {/* Mobile-Only Instruction Card: Rendered outside viewport so background room is 100% visible on mobile */}
-        <div className="sm:hidden mt-3 p-3.5 rounded-xl bg-[#222722] border border-[#4B5549]/40 text-xs text-[#F5F4EE] flex items-center gap-3 shadow-md">
-          <div className="p-1.5 rounded-lg bg-[#171B18] text-[#9DB79A] shrink-0">
+        <div className="sm:hidden mt-3 p-3.5 rounded-xl bg-[#F5F4EE] border border-[#E5E5E0] text-xs text-[#222722] flex items-center gap-3 shadow-xs">
+          <div className="p-1.5 rounded-lg bg-white border border-neutral-200 text-neutral-900 shrink-0 shadow-xs">
             <Compass className="w-4 h-4" />
           </div>
           <div className="min-w-0">
-            <span className="text-[10px] uppercase font-mono tracking-wider text-[#9DB79A] block mb-0.5">
+            <span className="text-[10px] uppercase font-mono tracking-wider text-[#4B5549] font-semibold block mb-0.5">
               Interactive 2.5D Viewport
             </span>
-            <p className="text-xs text-[#B7B9AF] leading-relaxed font-body">
+            <p className="text-xs text-neutral-600 leading-relaxed font-body">
               Drag across the frame to inspect architectural sightlines between the window casement and conversational seating core.
             </p>
           </div>

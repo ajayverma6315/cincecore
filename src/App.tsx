@@ -8,7 +8,7 @@ import { Spatial3DExperience } from './components/Spatial3DExperience';
 import { ResidentialServicesIndex } from './components/ResidentialServicesIndex';
 import { StudioAuthority } from './components/StudioAuthority';
 import { EditorialGallery } from './components/EditorialGallery';
-import { SignatureProjectStory } from './components/SignatureProjectStory';
+import { DesignApproach } from './components/DesignApproach';
 import { ConsultationCTA } from './components/ConsultationCTA';
 import { EditorialFAQ } from './components/EditorialFAQ';
 import { EditorialFooter } from './components/EditorialFooter';
@@ -173,42 +173,40 @@ export default function App() {
           onContactClick={() => handleOpenContactWithSubject('Private Consultation')}
         />
 
-        {/* 2. About Us (Matching reference image composition) */}
-        <AboutUsSection onLearnMore={() => scrollToSection('studio')} />
-
-        {/* 3. Our Services (Residential Practice Index with dedicated BHK navigation) */}
-        <ResidentialServicesIndex
-          onSelectService={handleSelectService}
-        />
-
-        {/* 4. Section A: Editorial Design Quotation */}
-        <EditorialQuotation />
-
-        {/* Why Choose Us: The Cinecore Standard & Architectural Excellence (Placed directly above Spatial Study) */}
-        <WhyChooseUs onConsultClick={() => handleOpenContactWithSubject('Private Consultation')} />
-
-        {/* 5. Section B: Spatial Depth & Proportions Interactive Experience */}
-        <Spatial3DExperience />
-
-        {/* 6. Studio Authority & Client Endorsements */}
-        <StudioAuthority />
-
-        {/* 7. Selected Projects (Architectural Editorial Gallery) */}
+        {/* 2. Selected Projects (Placed #2 before About section as requested) */}
         <EditorialGallery
           projects={projectsData}
           onSelectProject={(project) => setSelectedProject(project)}
           onViewAllProjects={() => setSelectedProject(projectsData[0])}
         />
 
-        {/* 8. Design Process & Project Storytelling */}
-        <SignatureProjectStory
-          onOpenCaseStudy={() => setSelectedProject(projectsData[0])}
+        {/* 3. Why Choose Our Studio */}
+        <WhyChooseUs onConsultClick={() => handleOpenContactWithSubject('Private Consultation')} />
+
+        {/* 4. About Us */}
+        <AboutUsSection onLearnMore={() => scrollToSection('process')} />
+
+        {/* 5. Interior Design by BHK Size */}
+        <ResidentialServicesIndex
+          onSelectService={handleSelectService}
         />
 
-        {/* 9. Contact / Consultation */}
+        {/* 6. Our Design Process */}
+        <DesignApproach />
+
+        {/* 7. Editorial Design Quotation */}
+        <EditorialQuotation />
+
+        {/* 8. Spatial Depth & Proportions 3D Interactive Experience */}
+        <Spatial3DExperience />
+
+        {/* 9. Studio Authority & Client Endorsements */}
+        <StudioAuthority />
+
+        {/* 10. Contact / Consultation */}
         <ConsultationCTA />
 
-        {/* 10. Frequently Asked Questions */}
+        {/* 11. Frequently Asked Questions */}
         <EditorialFAQ />
       </main>
 
