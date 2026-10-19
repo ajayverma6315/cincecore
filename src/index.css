@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark-primary: #171B18;
+    --bg-dark-secondary: #222722;
+    --accent-sage: #9DB79A;
+    --accent-olive: #4B5549;
+    --bg-light-primary: #F5F4EE;
+    --text-secondary: #B7B9AF;
+    --text-dark: #222722;
+    --text-white: #FFFFFF;
+
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Manrope', system-ui, sans-serif;
+    --font-editorial: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    background-color: var(--bg-dark-primary);
+  }
+
+  body {
+    background-color: var(--bg-dark-primary);
+    color: #F5F4EE;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  .font-editorial {
+    font-family: var(--font-editorial);
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-body {
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background-color: var(--accent-sage);
+    color: #171B18;
+  }
+
+  /* Ultra-fast rendering: instructs browser to defer rendering off-screen sections until scrolled */
+  .content-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+  }
+
+  /* Luxe Entrance Animations matching luxe-heroconcept.webflow.io */
+  @keyframes luxeScaleIn {
+    0% {
+      transform: scale(1.07);
+    }
+    100% {
+      transform: scale(1.0);
+    }
+  }
+
+  @keyframes luxeContentRise {
+    0% {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-luxe-hero-bg {
+    animation: luxeScaleIn 2.2s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
+  }
+
+  .animate-luxe-rise-1 {
+    animation: luxeContentRise 1s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
+  }
+
+  .animate-luxe-rise-2 {
+    animation: luxeContentRise 1s cubic-bezier(0.16, 1, 0.3, 1) 1.35s both;
+  }
+
+  .animate-luxe-rise-3 {
+    animation: luxeContentRise 1s cubic-bezier(0.16, 1, 0.3, 1) 1.5s both;
+  }
+}

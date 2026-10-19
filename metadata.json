@@ -1,0 +1,8 @@
+{
+  "name": "Cinecore Interior Design",
+  "description": "Parisian-inspired contemporary European interior architecture and bespoke residential design. Crafting timeless spaces with modern elegance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
